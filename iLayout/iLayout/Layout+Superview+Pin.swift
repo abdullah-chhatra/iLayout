@@ -10,72 +10,167 @@ import Foundation
 
 public extension Layout {
     
-    public func pinToTopEdgeOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the top edge of give view to that of it's parent.
+    
+        :param: view
+                View to pin top edge to that of it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToTopEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Top,
                             toEdge: .Top,
-                            constant: constant))
+                            constant: offset))
         return constraints.last!
     }
     
-    public func pinToTopMarginOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the top edge of give view to top margin of it's parent.
+    
+        :param: view
+                View to pin top edge to top margin it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToTopMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Top,
                             toEdge: .TopMargin,
-                            constant: constant))
+                            constant: offset))
         return constraints.last!
     }
     
-    public func pinToBottomEdgeOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the bottom edge of give view to that of it's parent.
+    
+        :param: view
+                View to pin bottom edge to that of it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToBottomEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Bottom,
                             toEdge: .Bottom,
-                            constant: -constant))
+                            constant: -offset))
         return constraints.last!
     }
 
-    public func pinToBottomMarginOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the bottom edge of give view to bottom margin of it's parent.
+    
+        :param: view
+                View to pin bottom edge to bottom margin it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToBottomMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Bottom,
                             toEdge: .BottomMargin,
-                            constant: -constant))
+                            constant: -offset))
         return constraints.last!
     }
 
-    public func pinToLeadingEdgeOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the leading edge of give view to that of it's parent.
+    
+        :param: view
+                View to pin leading edge to that of it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToLeadingEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Leading,
                             toEdge: .Leading,
-                            constant: constant))
+                            constant: offset))
         return constraints.last!
     }
     
-    public func pinToLeadingMarginOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the leading edge of give view to leading margin of it's parent.
+    
+        :param: view
+                View to pin leading edge to leading margin it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToLeadingMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Leading,
                             toEdge: .LeadingMargin,
-                            constant: constant))
+                            constant: offset))
         return constraints.last!
     }
     
-    public func pinToTrailingEdgeOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+    /**
+        Pins the trailing edge of give view to that of it's parent.
+    
+        :param: view
+                View to pin trailing edge to that of it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToTrailingEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Trailing,
                             toEdge: .Trailing,
-                            constant: -constant))
+                            constant: -offset))
         return constraints.last!
     }
     
+    /**
+        Pins the trailing edge of give view to trailing margin of it's parent.
     
-    public func pinToTrailingMarginOfSuperview(view: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+        :param: view
+                View to pin trailing edge to trailing margin it's parent.
+    
+        :param: offset
+                Offset by which to pin edge. Default if zero.
+    
+        :returns:
+                Returns created constriant.
+    */
+    public func pinToTrailingMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
                             edge: .Trailing,
                             toEdge: .TrailingMargin,
-                            constant: -constant))
+                            constant: -offset))
         return constraints.last!
     }
     
-    func pinView(view: UIView, edge: NSLayoutAttribute, toEdge: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+    private func pinView(view: UIView, edge: NSLayoutAttribute, toEdge: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: view,
                                     attribute: edge,
                                     relatedBy: .Equal,

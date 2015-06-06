@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    Arranges views in a linear fashion. This **must** not be instantiated directly.
+*/
 public class LinearLayoutView: BaseAutoLayoutView {
 
     public var layout: Layout!

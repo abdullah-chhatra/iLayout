@@ -10,6 +10,15 @@ import UIKit
 
 /**
     Arranges all the subviews in vertically one after another while making them expand to its width.
+
+    Usage:
+
+        let vl = VerticalLinearLayoutView()
+        vl.addSubview(firstView)
+        vl.addSubview(thirdView)
+        vl.insertSubview(secondView, atIndex: 1)
+        ...
+
 */
 public class VerticalLinearLayoutView: LinearLayoutView {
     

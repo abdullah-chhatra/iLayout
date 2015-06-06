@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+    This extension exposes methods to align views along different axis and ponts viz. align center, 
+    horizontally or vertically align center, align
+*/
 public extension Layout {
     
     /**
@@ -32,10 +36,10 @@ public extension Layout {
     
     
     /**
-        Vertically aligns a view to another view.
+        Vertically aligns a view's center to another view.
     
         :param: view
-                Align this view vertically with another view.
+                Align this view's center vertically with another view.
     
         :param: withView
                 Align the given view vertically with this view.
@@ -51,10 +55,10 @@ public extension Layout {
     }
     
     /**
-        Horizontally aligns a view to another view.
+        Horizontally aligns a view's center to another view.
     
         :param: view
-                Align this view horizontally with another view.
+                Align this view's center horizontally with another view.
     
         :param: withView
                 Align the given view horizontally with this view.

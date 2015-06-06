@@ -42,7 +42,7 @@ class PinSuverviewView : AutoLayoutView {
     
     override func addConstraints(layout: Layout) {
         
-        layout.pinToTopMarginOfSuperview(topLabel, constant: 10)
+        layout.pinToTopMarginOfSuperview(topLabel, offset: 10)
         layout.horizontallyAlignView(topLabel, withView: self)
         
         layout.pinToBottomMarginOfSuperview(bottomLabel)
