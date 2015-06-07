@@ -11,33 +11,20 @@ import iLayout
 
 class PinSuverviewView : AutoLayoutView {
     
-    var topLabel = UILabel.instanceWithAutoLayout()
-    var bottomLabel = UILabel.instanceWithAutoLayout()
-    var leadingLabel = UILabel.instanceWithAutoLayout()
-    var trailingLabel = UILabel.instanceWithAutoLayout()
+    var topLabel = UILabel.createWithText("Top Label - 5 pixel off edge")
+    var bottomLabel = UILabel.createWithText("Bottom Label Pin to margin")
+    var leadingLabel = UILabel.createWithText("Leading Label pin to edge")
+    var trailingLabel = UILabel.createWithText("Traling Label pin to margin")
     
     override func initializeView() {
         super.initializeView()
         
         backgroundColor = UIColor.whiteColor()
-        
-        topLabel.text = "Top Label - 5 pixel off edge"
-        topLabel.backgroundColor = UIColor.yellowColor()
+
         addSubview(topLabel)
-        
-        bottomLabel.text = "Bottom Label Pin to margin"
-        bottomLabel.backgroundColor = UIColor.redColor()
         addSubview(bottomLabel)
-        
-        leadingLabel.text = "Leading Label to edge"
-        leadingLabel.backgroundColor = UIColor.greenColor()
         addSubview(leadingLabel)
-        
-        trailingLabel.text = "Traling Label to margin"
-        trailingLabel.backgroundColor = UIColor.grayColor()
         addSubview(trailingLabel)
-        
-        println(layoutMargins)
     }
     
     override func addConstraints(layout: Layout) {

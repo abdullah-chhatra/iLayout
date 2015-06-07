@@ -19,6 +19,9 @@
 		B8EE07E61B233C4800FA3EB2 /* PinSuperviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */; };
 		B8EE07E81B233CAB00FA3EB2 /* SetDimensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */; };
 		B8EE07EA1B2440CC00FA3EB2 /* RelativeDimensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */; };
+		B8EE07EC1B244C7A00FA3EB2 /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07EB1B244C7A00FA3EB2 /* PlacementView.swift */; };
+		B8EE07EE1B24500400FA3EB2 /* FillSuperviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07ED1B24500400FA3EB2 /* FillSuperviewView.swift */; };
+		B8EE07F01B24583E00FA3EB2 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07EF1B24583E00FA3EB2 /* LayoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinSuperviewView.swift; sourceTree = "<group>"; };
 		B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDimensionsView.swift; sourceTree = "<group>"; };
 		B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDimensionView.swift; sourceTree = "<group>"; };
+		B8EE07EB1B244C7A00FA3EB2 /* PlacementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacementView.swift; sourceTree = "<group>"; };
+		B8EE07ED1B24500400FA3EB2 /* FillSuperviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillSuperviewView.swift; sourceTree = "<group>"; };
+		B8EE07EF1B24583E00FA3EB2 /* LayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				B85F2F8C1B12F7F2001E95AF /* Main.storyboard */,
 				B85F2F861B12F7F2001E95AF /* Supporting Files */,
 				B8EE07E21B233BA100FA3EB2 /* ExampleViewController.swift */,
+				B8EE07EF1B24583E00FA3EB2 /* LayoutViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -147,6 +154,8 @@
 				B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */,
 				B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */,
 				B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */,
+				B8EE07EB1B244C7A00FA3EB2 /* PlacementView.swift */,
+				B8EE07ED1B24500400FA3EB2 /* FillSuperviewView.swift */,
 			);
 			path = ExampleViews;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 				B85F2F8B1B12F7F2001E95AF /* ViewController.swift in Sources */,
 				B8EE07E31B233BA100FA3EB2 /* ExampleViewController.swift in Sources */,
 				B8EE07EA1B2440CC00FA3EB2 /* RelativeDimensionView.swift in Sources */,
+				B8EE07F01B24583E00FA3EB2 /* LayoutViewController.swift in Sources */,
 				B8EE07E81B233CAB00FA3EB2 /* SetDimensionsView.swift in Sources */,
 				B85F2F891B12F7F2001E95AF /* AppDelegate.swift in Sources */,
+				B8EE07EE1B24500400FA3EB2 /* FillSuperviewView.swift in Sources */,
+				B8EE07EC1B244C7A00FA3EB2 /* PlacementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

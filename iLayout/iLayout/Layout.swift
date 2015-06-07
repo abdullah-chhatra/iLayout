@@ -13,9 +13,9 @@ import UIKit
 
         let layout = Layout(rootView: view)
         layout.setForView(subview, height: 150)
-
-        ... //Some more constraints
-
+        ... 
+        //Some more constraints
+        ...
         layout.installConstraints()
 
  */

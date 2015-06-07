@@ -90,7 +90,7 @@ public extension Layout {
                             toItem: leftOf,
                             attribute: .Left,
                             multiplier: 1,
-                            constant: spacing))
+                            constant: -spacing))
         return constraints.last!
     }
     
@@ -117,7 +117,7 @@ public extension Layout {
                             toItem: rightOf,
                             attribute: .Right,
                             multiplier: 1,
-                            constant: -spacing))
+                            constant: spacing))
         return constraints.last!
     }
 }

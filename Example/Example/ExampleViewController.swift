@@ -11,9 +11,11 @@ import UIKit
 class ExampleViewController: UIViewController {
 
     let myView : UIView
+    let titleText : String
     
-    init(view: UIView) {
+    init(view: UIView, titleText: String) {
         myView = view
+        self.titleText = titleText
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -23,12 +25,13 @@ class ExampleViewController: UIViewController {
     
     override func loadView() {
         view = myView
+        navigationItem.title = titleText
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.navigationBar.translucent = false
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "")
     }
 }

@@ -13,7 +13,7 @@ import UIKit
 
     Usage:
 
-        let vl = VerticalLinearLayoutView()
+        let vl = HorizontalLinearLayoutView()
         vl.addSubview(firstView)
         vl.addSubview(thirdView)
         vl.insertSubview(secondView, atIndex: 1)
@@ -29,7 +29,7 @@ public class HorizontalLinearLayoutView : LinearLayoutView {
     
     public override func placeView(view: UIView, afterView: UIView) {
         layout.placeView(view, rightOf: afterView, spacing: interviewSpacing)
-        layout.fillWidthOfSuperview(view, respectMargin: respectsMargin)
+        layout.fillHeightOfSuperview(view, respectMargin: respectsMargin)
     }
     
     public override func placeLastView(view: UIView) {
