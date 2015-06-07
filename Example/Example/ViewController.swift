@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let CELLID = "Cellid"
-    let options = ["Pin to egde/margin of Superview"]
+    let options = [ "Pin to egde/margin of Superview",
+                    "Set dimentions",
+                    "Relative dimensions"]
     
     @IBOutlet var tableView: UITableView!
 
@@ -35,9 +37,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 0:
-            var vc = PinSuperviewViewController()
+            var vc = ExampleViewController(view: PinSuverviewView())
             navigationController?.pushViewController(vc, animated: true)
             break
+            
+        case 1:
+            var vc = ExampleViewController(view: SetDimensionsView())
+            navigationController?.pushViewController(vc, animated: true)
+            break
+
+        case 2:
+            var vc = ExampleViewController(view: RelativeDimensionView())
+            navigationController?.pushViewController(vc, animated: true)
+            break
+            
             
         default:
             break

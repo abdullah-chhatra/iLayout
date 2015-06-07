@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B85A36E01B132D71009CA37E /* PinSuperviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85A36DF1B132D71009CA37E /* PinSuperviewViewController.swift */; };
 		B85A36E21B132E25009CA37E /* iLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85A36E11B132E25009CA37E /* iLayout.framework */; };
 		B85A36E31B132E25009CA37E /* iLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B85A36E11B132E25009CA37E /* iLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B85F2F891B12F7F2001E95AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F881B12F7F2001E95AF /* AppDelegate.swift */; };
@@ -16,6 +15,10 @@
 		B85F2F901B12F7F2001E95AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F2F8F1B12F7F2001E95AF /* Images.xcassets */; };
 		B85F2F931B12F7F2001E95AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B85F2F911B12F7F2001E95AF /* LaunchScreen.xib */; };
 		B85F2F9F1B12F7F2001E95AF /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F9E1B12F7F2001E95AF /* ExampleTests.swift */; };
+		B8EE07E31B233BA100FA3EB2 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E21B233BA100FA3EB2 /* ExampleViewController.swift */; };
+		B8EE07E61B233C4800FA3EB2 /* PinSuperviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */; };
+		B8EE07E81B233CAB00FA3EB2 /* SetDimensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */; };
+		B8EE07EA1B2440CC00FA3EB2 /* RelativeDimensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B85A36DF1B132D71009CA37E /* PinSuperviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinSuperviewViewController.swift; sourceTree = "<group>"; };
 		B85A36E11B132E25009CA37E /* iLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = iLayout.framework; path = "/Users/abdullah/Library/Developer/Xcode/DerivedData/iLayout-gnzerxwgshrahmeiqxxkehtjxgzy/Build/Products/Debug-iphoneos/iLayout.framework"; sourceTree = "<absolute>"; };
 		B85F2F831B12F7F2001E95AF /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85F2F871B12F7F2001E95AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		B85F2F981B12F7F2001E95AF /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85F2F9D1B12F7F2001E95AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B85F2F9E1B12F7F2001E95AF /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
+		B8EE07E21B233BA100FA3EB2 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinSuperviewView.swift; sourceTree = "<group>"; };
+		B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDimensionsView.swift; sourceTree = "<group>"; };
+		B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDimensionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +104,14 @@
 		B85F2F851B12F7F2001E95AF /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				B8EE07E41B233C2D00FA3EB2 /* ExampleViews */,
 				B85F2F881B12F7F2001E95AF /* AppDelegate.swift */,
-				B85A36DF1B132D71009CA37E /* PinSuperviewViewController.swift */,
 				B85F2F8A1B12F7F2001E95AF /* ViewController.swift */,
 				B85F2F8F1B12F7F2001E95AF /* Images.xcassets */,
 				B85F2F911B12F7F2001E95AF /* LaunchScreen.xib */,
 				B85F2F8C1B12F7F2001E95AF /* Main.storyboard */,
 				B85F2F861B12F7F2001E95AF /* Supporting Files */,
+				B8EE07E21B233BA100FA3EB2 /* ExampleViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -132,6 +139,16 @@
 				B85F2F9D1B12F7F2001E95AF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8EE07E41B233C2D00FA3EB2 /* ExampleViews */ = {
+			isa = PBXGroup;
+			children = (
+				B8EE07E51B233C4800FA3EB2 /* PinSuperviewView.swift */,
+				B8EE07E71B233CAB00FA3EB2 /* SetDimensionsView.swift */,
+				B8EE07E91B2440CC00FA3EB2 /* RelativeDimensionView.swift */,
+			);
+			path = ExampleViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EE07E61B233C4800FA3EB2 /* PinSuperviewView.swift in Sources */,
 				B85F2F8B1B12F7F2001E95AF /* ViewController.swift in Sources */,
+				B8EE07E31B233BA100FA3EB2 /* ExampleViewController.swift in Sources */,
+				B8EE07EA1B2440CC00FA3EB2 /* RelativeDimensionView.swift in Sources */,
+				B8EE07E81B233CAB00FA3EB2 /* SetDimensionsView.swift in Sources */,
 				B85F2F891B12F7F2001E95AF /* AppDelegate.swift in Sources */,
-				B85A36E01B132D71009CA37E /* PinSuperviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

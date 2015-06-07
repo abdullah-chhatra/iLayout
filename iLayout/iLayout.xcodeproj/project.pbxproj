@@ -17,7 +17,7 @@
 		B85F2F6D1B0F56EC001E95AF /* Layout+Sibling+Placement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F6C1B0F56EC001E95AF /* Layout+Sibling+Placement.swift */; };
 		B85F2F6F1B0F5BE7001E95AF /* HorizontalLinearLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F6E1B0F5BE7001E95AF /* HorizontalLinearLayoutView.swift */; };
 		B85F2F711B10536E001E95AF /* Layout+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F701B10536E001E95AF /* Layout+Alignment.swift */; };
-		B85F2F731B105DAE001E95AF /* Layout+Sibling+Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F721B105DAE001E95AF /* Layout+Sibling+Dimension.swift */; };
+		B85F2F731B105DAE001E95AF /* Layout+Relative+Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F721B105DAE001E95AF /* Layout+Relative+Dimension.swift */; };
 		B85F2F751B12EBE7001E95AF /* AutoAdjustContentSizeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F741B12EBE7001E95AF /* AutoAdjustContentSizeScrollView.swift */; };
 		B85F2F771B12EC16001E95AF /* AutoAdjustContentSizeVerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F761B12EC16001E95AF /* AutoAdjustContentSizeVerticalScrollView.swift */; };
 		B85F2F791B12EC98001E95AF /* AutoAdjustContentSizeHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F781B12EC98001E95AF /* AutoAdjustContentSizeHorizontalScrollView.swift */; };
@@ -49,7 +49,7 @@
 		B85F2F6C1B0F56EC001E95AF /* Layout+Sibling+Placement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Sibling+Placement.swift"; sourceTree = "<group>"; };
 		B85F2F6E1B0F5BE7001E95AF /* HorizontalLinearLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLinearLayoutView.swift; sourceTree = "<group>"; };
 		B85F2F701B10536E001E95AF /* Layout+Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Alignment.swift"; sourceTree = "<group>"; };
-		B85F2F721B105DAE001E95AF /* Layout+Sibling+Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Sibling+Dimension.swift"; sourceTree = "<group>"; };
+		B85F2F721B105DAE001E95AF /* Layout+Relative+Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Relative+Dimension.swift"; sourceTree = "<group>"; };
 		B85F2F741B12EBE7001E95AF /* AutoAdjustContentSizeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAdjustContentSizeScrollView.swift; sourceTree = "<group>"; };
 		B85F2F761B12EC16001E95AF /* AutoAdjustContentSizeVerticalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAdjustContentSizeVerticalScrollView.swift; sourceTree = "<group>"; };
 		B85F2F781B12EC98001E95AF /* AutoAdjustContentSizeHorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAdjustContentSizeHorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				B8858A961A458845008C68FF /* Layout.swift */,
 				B85F2F701B10536E001E95AF /* Layout+Alignment.swift */,
 				B827BD9B1A4EBD9900802D2C /* Layout+Dimension.swift */,
-				B85F2F721B105DAE001E95AF /* Layout+Sibling+Dimension.swift */,
+				B85F2F721B105DAE001E95AF /* Layout+Relative+Dimension.swift */,
 				B85F2F6C1B0F56EC001E95AF /* Layout+Sibling+Placement.swift */,
 				B85F2F5F1B0F3818001E95AF /* Layout+Superview+Fill.swift */,
 				B8D6F0681A6AD46E004E3500 /* Layout+Superview+Pin.swift */,
@@ -280,7 +280,7 @@
 				B85F2F751B12EBE7001E95AF /* AutoAdjustContentSizeScrollView.swift in Sources */,
 				B85F2F6B1B0F5639001E95AF /* VerticalLinearLayoutView.swift in Sources */,
 				B8D6F0691A6AD46E004E3500 /* Layout+Superview+Pin.swift in Sources */,
-				B85F2F731B105DAE001E95AF /* Layout+Sibling+Dimension.swift in Sources */,
+				B85F2F731B105DAE001E95AF /* Layout+Relative+Dimension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,15 +36,18 @@ public extension Layout {
         :param: view
                 View to set height and width.
     
-        :param: size
-                Size to be set.
+        :param: width
+                Width to be set.
+    
+        :param: height
+                Height to be set.
     
         :returns:
                 Returns two constraints to set height and width.
     */
-    public func setForView(view: UIView, height: CGFloat, width: CGFloat) -> [NSLayoutConstraint] {
-        return [setForView(view, height: height),
-                setForView(view, width: width)]
+    public func setForView(view: UIView, width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
+        return [setForView(view, width: width),
+                setForView(view, height: height)]
     }
     
     /**

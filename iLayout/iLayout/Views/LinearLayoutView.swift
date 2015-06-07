@@ -63,9 +63,15 @@ public class LinearLayoutView: BaseAutoLayoutView {
         super.updateConstraints()
     }
     
-    public func placeFirstView(view: UIView) {}
+    public func placeFirstView(view: UIView) {
+        fatalError("This method must be implemented by subclass")
+    }
     
-    public func placeView(view: UIView, afterView: UIView) {}
+    public func placeView(view: UIView, afterView: UIView) {
+        fatalError("This method must be implemented by subclass")
+    }
     
-    public func placeLastView(view: UIView) {}
+    public func placeLastView(view: UIView) {
+        fatalError("This method must be implemented by subclass")
+    }
 }

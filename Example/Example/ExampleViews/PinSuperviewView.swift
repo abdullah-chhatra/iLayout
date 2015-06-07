@@ -1,8 +1,8 @@
 //
-//  PinSuperviewViewController.swift
+//  PinSuperviewView.swift
 //  Example
 //
-//  Created by Abdulmunaf Chhatra on 5/25/15.
+//  Created by Abdulmunaf Chhatra on 6/6/15.
 //  Copyright (c) 2015 Abdulmunaf Chhatra. All rights reserved.
 //
 
@@ -53,19 +53,5 @@ class PinSuverviewView : AutoLayoutView {
         
         layout.pinToTrailingMarginOfSuperview(trailingLabel)
         layout.verticallyAlignView(trailingLabel, withView: self)
-    }
-}
-
-class PinSuperviewViewController: UIViewController {
-
-    override func loadView() {
-        view = PinSuverviewView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationController?.navigationBar.translucent = false
-        
     }
 }

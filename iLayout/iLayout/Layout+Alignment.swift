@@ -28,12 +28,59 @@ public extension Layout {
     
         :param: offsetY
                 Y offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created constraints.
     */
     public func alignCenterOfView(view: UIView, withView: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint]{
+        
         return [verticallyAlignView(view, withView: withView, offset: offsetY),
                 horizontallyAlignView(view, withView: withView, offset: offsetX)]
     }
     
+    /**
+        Aligns center of view with it's superview.
+    
+        :param: view
+            Center of this view will be aligned to it's superview.
+    
+        :param: offsetX
+                X offset for alignment. Default is zero.
+    
+        :param: offsetY
+                Y offset for alignment. Default is zero.
+    
+        :returns:
+            Returns created constraints.
+    */
+    public func alignCenterWithSuperview(view: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
+        
+        return alignCenterOfView(view, withView: view.superview!, offsetX: offsetX, offsetY: offsetY)
+    }
+    
+    /**
+        Aligns center of all the views with their superview.
+    
+        :param: views
+                Center of these views will be aligned to their superview.
+    
+        :param: offsetX
+                X offset for alignment. Default is zero.
+    
+        :param: offsetY
+                Y offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created constraints.
+    */
+
+    public func alignCenterWithSuperview(views: [UIView], offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
+        var cs = [NSLayoutConstraint]()
+        for view in views {
+            cs += alignCenterWithSuperview(view, offsetX: offsetX, offsetY: offsetY)
+        }
+        return cs
+    }
     
     /**
         Vertically aligns a view's center to another view.
@@ -47,11 +94,49 @@ public extension Layout {
         :param: offset
                 Offset for alignment. Default is zero.
     
+        :returns:
+                Returns created contraint.
     */
     public func verticallyAlignView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint{
         
         constraints.append(alignView(view, withView: withView, attribute: .CenterY, offset: offset))
         return constraints.last!
+    }
+    
+    /**
+        Vertically aligns a view's center to it's superview.
+    
+        :param: view
+                Align this view's center vertically with it's superview.
+    
+        :param: offset
+                Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraint.
+    */
+    public func verticallyAlignWithSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        return verticallyAlignView(view, withView: view.superview!, offset: offset)
+    }
+    
+    /**
+        Vertically aligns center of all the views to their superview.
+    
+        :param: views
+                Align center of these views vertically with their superview.
+    
+        :param: offset
+                Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraints.
+    */
+    public func verticallyAlignWithSuperview(views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
+        var cs = [NSLayoutConstraint]()
+        for view in views {
+            cs.append(verticallyAlignView(view, withView: view.superview!, offset: offset))
+        }
+        return cs
     }
     
     /**
@@ -65,12 +150,50 @@ public extension Layout {
     
         :param: offset
                 Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraint.
     */
-
     public func horizontallyAlignView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         
         constraints.append(alignView(view, withView: withView, attribute: .CenterX, offset: offset))
         return constraints.last!
+    }
+    
+    /**
+        Horizontally aligns a view's center to it's superview.
+    
+        :param: view
+                Align this view's center horizontally with it's superview.
+    
+        :param: offset
+                Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraint.
+    */
+    public func horizontallyAlignWithSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        return horizontallyAlignView(view, withView: view.superview!, offset: offset)
+    }
+    
+    /**
+        Horizontally aligns center of all the views to their superview.
+    
+        :param: views
+                Align center of these views horizontally with their superview.
+    
+        :param: offset
+                Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraints.
+    */
+    public func horizontallyAlignWithSuperview(views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
+        var cs = [NSLayoutConstraint]()
+        for view in views {
+            cs.append(horizontallyAlignView(view, withView: view.superview!, offset: offset))
+        }
+        return cs
     }
     
     /**
@@ -85,6 +208,8 @@ public extension Layout {
         :param: offset
                 Offset for alignment. Default is zero.
     
+        :returns:
+                Returns created contraint.
     */
     public func alignTopOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(alignView(view, withView: withView, attribute: .Top, offset: offset))
@@ -102,6 +227,9 @@ public extension Layout {
     
         :param: offset
                 Offset for alignment. Default is zero.
+    
+        :returns:
+                Returns created contraint.
     */
     public func alignBottomOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(alignView(view, withView: withView, attribute: .Bottom, offset: offset))
@@ -120,6 +248,8 @@ public extension Layout {
         :param: offset
                 Offset for alignment. Default is zero.
     
+        :returns:
+                Returns created contraint.
     */
     public func alignLeadingOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(alignView(view, withView: withView, attribute: .Leading, offset: offset))
@@ -138,6 +268,8 @@ public extension Layout {
         :param: offset
                 Offset for alignment. Default is zero.
     
+        :returns:
+                Returns created contraint.
     */
     public func alignTrailingOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(alignView(view, withView: withView, attribute: .Trailing, offset: offset))

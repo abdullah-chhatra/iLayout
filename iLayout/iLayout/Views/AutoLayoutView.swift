@@ -43,6 +43,7 @@ import Foundation
                 layout.placeView(userName, above: password, spacing: 5)
             }
         }
+
 */
 public class AutoLayoutView : BaseAutoLayoutView {
     

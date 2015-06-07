@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import iLayout
 
 class ExampleTests: XCTestCase {
     
@@ -22,6 +23,21 @@ class ExampleTests: XCTestCase {
     }
     
     func testExample() {
+        
+        let view = UIView()
+        let subView = UILabel.instanceWithAutoLayout()
+        view.addSubview(subView)
+        
+        
+        let layout = Layout(rootView: view)
+        let hc = layout.horizontallyAlignView(subView, withView: view, offset: 10)
+        
+        XCTAssert(hc.firstItem === subView, "")
+        XCTAssert(hc.secondItem! === view, "")
+        XCTAssert(hc.firstAttribute == NSLayoutAttribute.CenterX, "")
+        XCTAssert(hc.secondAttribute == NSLayoutAttribute.CenterX, "")
+        XCTAssert(hc.multiplier == 1, "")
+        
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }

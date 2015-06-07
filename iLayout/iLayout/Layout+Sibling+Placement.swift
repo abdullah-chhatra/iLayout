@@ -31,10 +31,10 @@ public extension Layout {
     public func placeView(view: UIView, below: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
 
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Bottom,
+                            attribute: .Top,
                             relatedBy: .Equal,
                             toItem: below,
-                            attribute: .Top,
+                            attribute: .Bottom,
                             multiplier: 1,
                             constant: spacing))
         return constraints.last!
@@ -58,10 +58,10 @@ public extension Layout {
     public func placeView(view: UIView, above: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Top,
+                            attribute: .Bottom,
                             relatedBy: .Equal,
                             toItem: above,
-                            attribute: .Bottom,
+                            attribute: .Top,
                             multiplier: 1,
                             constant: -spacing))
         return constraints.last!
