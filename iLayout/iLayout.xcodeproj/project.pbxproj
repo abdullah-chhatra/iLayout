@@ -26,6 +26,7 @@
 		B8858A8D1A4587C5008C68FF /* iLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8858A8C1A4587C5008C68FF /* iLayoutTests.swift */; };
 		B8858A971A458845008C68FF /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8858A961A458845008C68FF /* Layout.swift */; };
 		B8D6F0691A6AD46E004E3500 /* Layout+Superview+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D6F0681A6AD46E004E3500 /* Layout+Superview+Pin.swift */; };
+		B8EE07F21B24AF6000FA3EB2 /* AutoLayoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EE07F11B24AF6000FA3EB2 /* AutoLayoutTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B8858A8C1A4587C5008C68FF /* iLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iLayoutTests.swift; sourceTree = "<group>"; };
 		B8858A961A458845008C68FF /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		B8D6F0681A6AD46E004E3500 /* Layout+Superview+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Superview+Pin.swift"; sourceTree = "<group>"; };
+		B8EE07F11B24AF6000FA3EB2 /* AutoLayoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				B85F2F681B0F4AFE001E95AF /* LinearLayoutView.swift */,
 				B85F2F641B0F45B0001E95AF /* UIView.swift */,
 				B85F2F6A1B0F5639001E95AF /* VerticalLinearLayoutView.swift */,
+				B8EE07F11B24AF6000FA3EB2 /* AutoLayoutTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				B85F2F601B0F3818001E95AF /* Layout+Superview+Fill.swift in Sources */,
 				B85F2F691B0F4AFE001E95AF /* LinearLayoutView.swift in Sources */,
 				B85F2F651B0F45B0001E95AF /* UIView.swift in Sources */,
+				B8EE07F21B24AF6000FA3EB2 /* AutoLayoutTableViewCell.swift in Sources */,
 				B85F2F751B12EBE7001E95AF /* AutoAdjustContentSizeScrollView.swift in Sources */,
 				B85F2F6B1B0F5639001E95AF /* VerticalLinearLayoutView.swift in Sources */,
 				B8D6F0691A6AD46E004E3500 /* Layout+Superview+Pin.swift in Sources */,

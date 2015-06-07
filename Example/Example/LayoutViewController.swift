@@ -44,8 +44,13 @@ class LayoutViewController: UIViewController {
     
     override func updateViewConstraints() {
         if !constraintsUpdated {
-            let layout = Layout(rootView: containerView)
-            layout.fillSuperview(layoutView, respectMargin: false)
+            let layout = Layout(rootView: containerView, viewMap: ["container": containerView, "layout": layoutView])
+            
+            //layout.fillSuperview(layoutView, respectMargin: false)
+            
+            //Just to show usage of visual format.
+            layout.createWithVisualFormat("V:|[layout]|")
+            layout.createWithVisualFormat("H:|[layout]|")
             layout.installConstraints()
             constraintsUpdated = true
         }

@@ -39,10 +39,10 @@ public extension Layout {
     }
     
     /**
-        Aligns center of view with it's superview.
+        Aligns center of view with its superview.
     
         :param: view
-            Center of this view will be aligned to it's superview.
+            Center of this view will be aligned to its superview.
     
         :param: offsetX
                 X offset for alignment. Default is zero.
@@ -104,10 +104,10 @@ public extension Layout {
     }
     
     /**
-        Vertically aligns a view's center to it's superview.
+        Vertically aligns a view's center to its superview.
     
         :param: view
-                Align this view's center vertically with it's superview.
+                Align this view's center vertically with its superview.
     
         :param: offset
                 Offset for alignment. Default is zero.
@@ -161,10 +161,10 @@ public extension Layout {
     }
     
     /**
-        Horizontally aligns a view's center to it's superview.
+        Horizontally aligns a view's center to its superview.
     
         :param: view
-                Align this view's center horizontally with it's superview.
+                Align this view's center horizontally with its superview.
     
         :param: offset
                 Offset for alignment. Default is zero.

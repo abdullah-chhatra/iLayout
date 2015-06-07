@@ -11,10 +11,10 @@ import Foundation
 public extension Layout {
     
     /**
-        Pins the top edge of give view to that of it's parent.
+        Pins the top edge of give view to that of its parent.
     
         :param: view
-                View to pin top edge to that of it's parent.
+                View to pin top edge to that of its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -31,10 +31,10 @@ public extension Layout {
     }
     
     /**
-        Pins the top edge of give view to top margin of it's parent.
+        Pins the top edge of give view to top margin of its parent.
     
         :param: view
-                View to pin top edge to top margin it's parent.
+                View to pin top edge to top margin its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -51,10 +51,10 @@ public extension Layout {
     }
     
     /**
-        Pins the bottom edge of give view to that of it's parent.
+        Pins the bottom edge of give view to that of its parent.
     
         :param: view
-                View to pin bottom edge to that of it's parent.
+                View to pin bottom edge to that of its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -71,10 +71,10 @@ public extension Layout {
     }
 
     /**
-        Pins the bottom edge of give view to bottom margin of it's parent.
+        Pins the bottom edge of give view to bottom margin of its parent.
     
         :param: view
-                View to pin bottom edge to bottom margin it's parent.
+                View to pin bottom edge to bottom margin its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -91,10 +91,10 @@ public extension Layout {
     }
 
     /**
-        Pins the leading edge of give view to that of it's parent.
+        Pins the leading edge of give view to that of its parent.
     
         :param: view
-                View to pin leading edge to that of it's parent.
+                View to pin leading edge to that of its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -111,10 +111,10 @@ public extension Layout {
     }
     
     /**
-        Pins the leading edge of give view to leading margin of it's parent.
+        Pins the leading edge of give view to leading margin of its parent.
     
         :param: view
-                View to pin leading edge to leading margin it's parent.
+                View to pin leading edge to leading margin its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -131,10 +131,10 @@ public extension Layout {
     }
     
     /**
-        Pins the trailing edge of give view to that of it's parent.
+        Pins the trailing edge of give view to that of its parent.
     
         :param: view
-                View to pin trailing edge to that of it's parent.
+                View to pin trailing edge to that of its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
@@ -151,10 +151,10 @@ public extension Layout {
     }
     
     /**
-        Pins the trailing edge of give view to trailing margin of it's parent.
+        Pins the trailing edge of give view to trailing margin of its parent.
     
         :param: view
-                View to pin trailing edge to trailing margin it's parent.
+                View to pin trailing edge to trailing margin its parent.
     
         :param: offset
                 Offset by which to pin edge. Default if zero.
