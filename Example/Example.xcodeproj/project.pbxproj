@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B85A36E21B132E25009CA37E /* iLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85A36E11B132E25009CA37E /* iLayout.framework */; };
-		B85A36E31B132E25009CA37E /* iLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B85A36E11B132E25009CA37E /* iLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B85F2F891B12F7F2001E95AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F881B12F7F2001E95AF /* AppDelegate.swift */; };
 		B85F2F8B1B12F7F2001E95AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F2F8A1B12F7F2001E95AF /* ViewController.swift */; };
 		B85F2F8E1B12F7F2001E95AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85F2F8C1B12F7F2001E95AF /* Main.storyboard */; };
@@ -34,22 +32,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B85A36E41B132E25009CA37E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B85A36E31B132E25009CA37E /* iLayout.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		B85A36E11B132E25009CA37E /* iLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = iLayout.framework; path = "/Users/abdullah/Library/Developer/Xcode/DerivedData/iLayout-gnzerxwgshrahmeiqxxkehtjxgzy/Build/Products/Debug-iphoneos/iLayout.framework"; sourceTree = "<absolute>"; };
 		B85F2F831B12F7F2001E95AF /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85F2F871B12F7F2001E95AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B85F2F881B12F7F2001E95AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B85A36E21B132E25009CA37E /* iLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +73,6 @@
 		B85F2F7A1B12F7F2001E95AF = {
 			isa = PBXGroup;
 			children = (
-				B85A36E11B132E25009CA37E /* iLayout.framework */,
 				B85F2F851B12F7F2001E95AF /* Example */,
 				B85F2F9B1B12F7F2001E95AF /* ExampleTests */,
 				B85F2F841B12F7F2001E95AF /* Products */,
@@ -170,7 +151,6 @@
 				B85F2F7F1B12F7F2001E95AF /* Sources */,
 				B85F2F801B12F7F2001E95AF /* Frameworks */,
 				B85F2F811B12F7F2001E95AF /* Resources */,
-				B85A36E41B132E25009CA37E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

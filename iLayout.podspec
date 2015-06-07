@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.name             = "iLayout"
   s.version          = "0.1.0"
   s.summary          = "Framework providing high level and intutive APIs for creating auto layout constraints"
-  s.description      = "Framework providing high level and intutive APIs for creating auto layout constraints"
+  s.description      = "Framework providing high level and intutive APIs for creating auto layout constraints. Also provides classes to create custom views with auto layout."
   s.homepage         = "https://github.com/abdullah-chhatra/iDate.git"
   s.license          = 'MIT'
   s.author           = { "Abdulmunaf Chhatra" => "abdullah.chhatra@gmail.com" }
