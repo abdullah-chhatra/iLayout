@@ -258,6 +258,26 @@ Managing subviews and adjusting content size dynamically in `UIScrollView` is qu
 
 Please check example code for examples and docs for more information.
 
+# Using the framework
+## Using Cocoapods
+
+This is the easiest way to use iLayout. Add following line to your Podfile:
+
+pod 'iLayout'
+
+## Adding to a workspace
+
+1. Download and place the code into workspace directory 
+2. Click file -> "Add files to <Workspace_name>"
+3. Navigate to iLayout directory into your workspace directory
+4. Click on iLayout.xcodeproj
+
+The project is now part of your workspace. You will have to add its reference to your main project in target section.
+
+## Adding to a project
+
+1. Copy the iLayout/iLayout source folder into your project
+
 # Lincense
 
 The MIT License (MIT)
