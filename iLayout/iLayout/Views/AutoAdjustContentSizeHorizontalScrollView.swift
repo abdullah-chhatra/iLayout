@@ -8,6 +8,20 @@
 
 import Foundation
 
+/**
+    Adds scroll view on top of `HorizontalLinearLayout`. This will allow to grow underlying
+    horizontal linear layout to grow indefinitly to accomodate its subviews and provide
+    scrolling to access subviews.
+
+    Usage:
+
+        let vl = AutoAdjustContentSizeHorizontalScrollView()
+        vl.addSubview(firstView)
+        vl.addSubview(thirdView)
+        vl.insertSubview(secondView, atIndex: 1)
+        ...
+
+*/
 public class AutoAdjustContentSizeHorizontalScrollView : AutoAdjustContentSizeScrollView {
     
     public override func initializeView() {

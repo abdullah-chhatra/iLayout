@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+    Arranges subviews in linear fashion and provieds scrolling behaviour. This **must** not be 
+    instantiated directly, use any one of its derived classes `AutoAdjustContentSizeHorizontalScrollView`
+    or `AutoAdjustContentSizeVerticalScrollView`.
+*/
 public class AutoAdjustContentSizeScrollView : AutoLayoutView {
     
     var scrollView = UIScrollView.instanceWithAutoLayout()

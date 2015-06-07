@@ -10,6 +10,8 @@ import UIKit
 
 /**
     Arranges all the subviews in vertically one after another while making them expand to its width.
+    If there are no height constraints present this view will expand vertically to accomodate all 
+    of its subviews.
 
     Usage:
 
@@ -18,6 +20,7 @@ import UIKit
         vl.addSubview(thirdView)
         vl.insertSubview(secondView, atIndex: 1)
         ...
+
 
 */
 public class VerticalLinearLayoutView: LinearLayoutView {

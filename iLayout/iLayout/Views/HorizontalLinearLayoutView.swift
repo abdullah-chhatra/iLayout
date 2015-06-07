@@ -10,6 +10,8 @@ import UIKit
 
 /**
     Arranges all the subviews in horizontally one after another while making them expand to its height.
+    If there are no width constraints present this view will expand horizontally to accomodate all
+    of its subviews.
 
     Usage:
 
