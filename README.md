@@ -259,7 +259,7 @@ Managing subviews and adjusting content size dynamically in `UIScrollView` is qu
 Please check example code for examples and docs for more information.
 
 # Using the framework
-## Using Cocoapods
+## Using CocoaPods
 
 This is the easiest way to use iLayout. Add following line to your Podfile:
 
