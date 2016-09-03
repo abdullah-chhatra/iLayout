@@ -11,7 +11,7 @@ import Foundation
 public class BaseAutoLayoutView : UIView {
     
     public convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
     public override init(frame: CGRect) {
@@ -19,7 +19,7 @@ public class BaseAutoLayoutView : UIView {
         initializeView()
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initializeView()
     }

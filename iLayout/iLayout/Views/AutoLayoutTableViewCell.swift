@@ -20,7 +20,7 @@ public class AutoLayoutTableViewCell : UITableViewCell {
         initializeCell()
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -41,7 +41,7 @@ public class AutoLayoutTableViewCell : UITableViewCell {
         :param: layout
                 Layout object to add constraints.
     */
-    public func addConstraints(layout: Layout) {
+    public func addConstraints(_ layout: Layout) {
         fatalError("This method must be implemented by subclass")
     }
     

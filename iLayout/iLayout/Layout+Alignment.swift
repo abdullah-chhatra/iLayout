@@ -32,7 +32,8 @@ public extension Layout {
         :returns:
                 Returns created constraints.
     */
-    public func alignCenterOfView(view: UIView, withView: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint]{
+    @discardableResult
+    public func alignCenterOfView(_ view: UIView, withView: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint]{
         
         return [verticallyAlignView(view, withView: withView, offset: offsetY),
                 horizontallyAlignView(view, withView: withView, offset: offsetX)]
@@ -53,7 +54,8 @@ public extension Layout {
         :returns:
             Returns created constraints.
     */
-    public func alignCenterWithSuperview(view: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func alignCenterWithSuperview(_ view: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
         
         return alignCenterOfView(view, withView: view.superview!, offsetX: offsetX, offsetY: offsetY)
     }
@@ -73,8 +75,8 @@ public extension Layout {
         :returns:
                 Returns created constraints.
     */
-
-    public func alignCenterWithSuperview(views: [UIView], offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func alignCenterWithSuperview(_ views: [UIView], offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> [NSLayoutConstraint] {
         var cs = [NSLayoutConstraint]()
         for view in views {
             cs += alignCenterWithSuperview(view, offsetX: offsetX, offsetY: offsetY)
@@ -97,9 +99,10 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func verticallyAlignView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint{
+    @discardableResult
+    public func verticallyAlignView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint{
         
-        constraints.append(alignView(view, withView: withView, attribute: .CenterY, offset: offset))
+        constraints.append(alignView(view, withView: withView, attribute: .centerY, offset: offset))
         return constraints.last!
     }
     
@@ -115,7 +118,8 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func verticallyAlignWithSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func verticallyAlignWithSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return verticallyAlignView(view, withView: view.superview!, offset: offset)
     }
     
@@ -131,7 +135,8 @@ public extension Layout {
         :returns:
                 Returns created contraints.
     */
-    public func verticallyAlignWithSuperview(views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func verticallyAlignWithSuperview(_ views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
         var cs = [NSLayoutConstraint]()
         for view in views {
             cs.append(verticallyAlignView(view, withView: view.superview!, offset: offset))
@@ -154,9 +159,10 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func horizontallyAlignView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func horizontallyAlignView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         
-        constraints.append(alignView(view, withView: withView, attribute: .CenterX, offset: offset))
+        constraints.append(alignView(view, withView: withView, attribute: .centerX, offset: offset))
         return constraints.last!
     }
     
@@ -172,7 +178,8 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func horizontallyAlignWithSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func horizontallyAlignWithSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return horizontallyAlignView(view, withView: view.superview!, offset: offset)
     }
     
@@ -188,7 +195,8 @@ public extension Layout {
         :returns:
                 Returns created contraints.
     */
-    public func horizontallyAlignWithSuperview(views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func horizontallyAlignWithSuperview(_ views: [UIView], offset: CGFloat = 0) -> [NSLayoutConstraint] {
         var cs = [NSLayoutConstraint]()
         for view in views {
             cs.append(horizontallyAlignView(view, withView: view.superview!, offset: offset))
@@ -211,8 +219,9 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func alignTopOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
-        constraints.append(alignView(view, withView: withView, attribute: .Top, offset: offset))
+    @discardableResult
+    public func alignTopOfView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        constraints.append(alignView(view, withView: withView, attribute: .top, offset: offset))
         return constraints.last!
     }
     
@@ -231,8 +240,9 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func alignBottomOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
-        constraints.append(alignView(view, withView: withView, attribute: .Bottom, offset: offset))
+    @discardableResult
+    public func alignBottomOfView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        constraints.append(alignView(view, withView: withView, attribute: .bottom, offset: offset))
         return constraints.last!
     }
     
@@ -251,8 +261,9 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func alignLeadingOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
-        constraints.append(alignView(view, withView: withView, attribute: .Leading, offset: offset))
+    @discardableResult
+    public func alignLeadingOfView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        constraints.append(alignView(view, withView: withView, attribute: .leading, offset: offset))
         return constraints.last!
     }
     
@@ -271,15 +282,16 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func alignTrailingOfView(view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
-        constraints.append(alignView(view, withView: withView, attribute: .Trailing, offset: offset))
+    @discardableResult
+    public func alignTrailingOfView(_ view: UIView, withView: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        constraints.append(alignView(view, withView: withView, attribute: .trailing, offset: offset))
         return constraints.last!
     }
     
-    private func alignView(view: UIView, withView: UIView, attribute: NSLayoutAttribute, offset: CGFloat) -> NSLayoutConstraint {
+    private func alignView(_ view: UIView, withView: UIView, attribute: NSLayoutAttribute, offset: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: view,
                                 attribute: attribute,
-                                relatedBy: .Equal,
+                                relatedBy: .equal,
                                 toItem: withView,
                                 attribute: attribute,
                                 multiplier: 1,

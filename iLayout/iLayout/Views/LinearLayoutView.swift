@@ -26,14 +26,14 @@ public class LinearLayoutView: BaseAutoLayoutView {
         layout = Layout(rootView: self)
     }
     
-    public override func didAddSubview(subview: UIView) {
+    public override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
         
         subviewListModified = true
         setNeedsUpdateConstraints()
     }
     
-    public override func willRemoveSubview(subview: UIView) {
+    public override func willRemoveSubview(_ subview: UIView) {
         super.willRemoveSubview(subview)
         
         subviewListModified = true
@@ -45,7 +45,7 @@ public class LinearLayoutView: BaseAutoLayoutView {
             layout.clearConstraints()
             
             var previous : UIView!
-            for (index, subview) in enumerate(subviews as! [UIView]){
+            for (index, subview) in subviews.enumerated() {
                 if index == 0 {
                     placeFirstView(subview)
                 } else {
@@ -63,15 +63,15 @@ public class LinearLayoutView: BaseAutoLayoutView {
         super.updateConstraints()
     }
     
-    public func placeFirstView(view: UIView) {
+    public func placeFirstView(_ view: UIView) {
         fatalError("This method must be implemented by subclass")
     }
     
-    public func placeView(view: UIView, afterView: UIView) {
+    public func placeView(_ view: UIView, afterView: UIView) {
         fatalError("This method must be implemented by subclass")
     }
     
-    public func placeLastView(view: UIView) {
+    public func placeLastView(_ view: UIView) {
         fatalError("This method must be implemented by subclass")
     }
 }

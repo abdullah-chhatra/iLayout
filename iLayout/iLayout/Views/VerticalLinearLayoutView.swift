@@ -25,16 +25,16 @@ import UIKit
 */
 public class VerticalLinearLayoutView: LinearLayoutView {
     
-    public override func placeFirstView(view: UIView) {
+    public override func placeFirstView(_ view: UIView) {
         layout.fillTopOfSuperview(view, respectMargin: respectsMargin)
     }
     
-    public override func placeView(view: UIView, afterView: UIView) {
+    public override func placeView(_ view: UIView, afterView: UIView) {
         layout.fillWidthOfSuperview(view, respectMargin: respectsMargin)
         layout.placeView(view, below: afterView, spacing: interviewSpacing)
     }
     
-    public override func placeLastView(view: UIView) {
+    public override func placeLastView(_ view: UIView) {
         layout.fillBottomOfSuperview(view, respectMargin: respectsMargin)
     }
 }

@@ -27,68 +27,68 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: CELLID)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CELLID)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(CELLID, forIndexPath: indexPath) as! UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELLID, for: indexPath) 
         
-        cell.textLabel?.text = options[indexPath.row]
+        cell.textLabel?.text = options[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch (indexPath as NSIndexPath).row {
         case 0:
-            var vc = ExampleViewController(view: PinSuverviewView(), titleText: options[indexPath.row])
+            let vc = ExampleViewController(view: PinSuverviewView(), titleText: options[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
             break
             
         case 1:
-            var vc = ExampleViewController(view: SetDimensionsView(), titleText: options[indexPath.row])
+            let vc = ExampleViewController(view: SetDimensionsView(), titleText: options[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
             break
 
         case 2:
-            var vc = ExampleViewController(view: RelativeDimensionView(), titleText: options[indexPath.row])
+            let vc = ExampleViewController(view: RelativeDimensionView(), titleText: options[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
             break
             
         case 3:
-            var vc = ExampleViewController(view: PlacementView(), titleText: options[indexPath.row])
+            let vc = ExampleViewController(view: PlacementView(), titleText: options[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
             break
         
         case 4:
-            var vc = ExampleViewController(view: FillSuperviewView(), titleText: options[indexPath.row])
+            let vc = ExampleViewController(view: FillSuperviewView(), titleText: options[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
             break
         
         case 5:
-            var vc = storyboard?.instantiateViewControllerWithIdentifier("LayoutViewController") as! LayoutViewController
-            vc.layoutView = VerticalLinearLayoutView.instanceWithAutoLayout()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "LayoutViewController") as! LayoutViewController
+            vc.layoutProvider = VerticalLayoutProvider()
             navigationController?.pushViewController(vc, animated: true)
             break
 
         case 6:
-            var vc = storyboard?.instantiateViewControllerWithIdentifier("LayoutViewController") as! LayoutViewController
-            vc.layoutView = HorizontalLinearLayoutView.instanceWithAutoLayout()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "LayoutViewController") as! LayoutViewController
+            vc.layoutProvider = HorizontalLayoutProvider()
             navigationController?.pushViewController(vc, animated: true)
             break
 
         case 7:
-            var vc = storyboard?.instantiateViewControllerWithIdentifier("LayoutViewController") as! LayoutViewController
-            vc.layoutView = AutoAdjustContentSizeVerticalScrollView.instanceWithAutoLayout()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "LayoutViewController") as! LayoutViewController
+            vc.layoutProvider = AutoScrollVerticalLayoutProvider()
             navigationController?.pushViewController(vc, animated: true)
             break
 
         case 8:
-            var vc = storyboard?.instantiateViewControllerWithIdentifier("LayoutViewController") as! LayoutViewController
-            vc.layoutView = AutoAdjustContentSizeHorizontalScrollView.instanceWithAutoLayout()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "LayoutViewController") as! LayoutViewController
+            vc.layoutProvider = AutoScrollHorizontalLayoutProvider()
             navigationController?.pushViewController(vc, animated: true)
             break
 

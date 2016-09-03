@@ -11,22 +11,22 @@ import iLayout
 
 class RelativeDimensionView : AutoLayoutView {
     
-    var label1 = UILabel.createWithText("Label 1  250px X 50px")
+    var label1 = UILabel.createWithText(text: "Label 1  250px X 50px")
     
-    var sameWidth = UILabel.createWithText("Same width")
-    var sameHeight = UILabel.createWithText("Same height")
-    var sameSize = UILabel.createWithText("Same size")
+    var sameWidth = UILabel.createWithText(text: "Same width")
+    var sameHeight = UILabel.createWithText(text: "Same height")
+    var sameSize = UILabel.createWithText(text: "Same size")
     
-    var halfWidth = UILabel.createWithText("Half width")
-    var halfHeight = UILabel.createWithText("Half height")
+    var halfWidth = UILabel.createWithText(text: "Half width")
+    var halfHeight = UILabel.createWithText(text: "Half height")
     
-    var doubleWidth = UILabel.createWithText("Double width")
-    var doubleHeight = UILabel.createWithText("Double height")
+    var doubleWidth = UILabel.createWithText(text: "Double width")
+    var doubleHeight = UILabel.createWithText(text: "Double height")
     
     override func initializeView() {
         super.initializeView()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
         addSubview(label1)
         addSubview(sameWidth)
@@ -38,8 +38,8 @@ class RelativeDimensionView : AutoLayoutView {
         addSubview(doubleHeight)
     }
     
-    override func addConstraints(layout: Layout) {
-        layout.horizontallyAlignWithSuperview(subviews as! [UIView])
+    override func addConstraints(_ layout: Layout) {
+        layout.horizontallyAlignWithSuperview(subviews)
         
         layout.pinToTopMarginOfSuperview(label1, offset: 10)
         

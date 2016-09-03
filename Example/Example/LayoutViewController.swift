@@ -13,15 +13,16 @@ class LayoutViewController: UIViewController {
 
     @IBOutlet var containerView : UIView!
     
-    var layoutView: UIView!
+    var layoutProvider: LayoutProvider!
     
-    var constraintsUpdated = false
-    var subviews = [UIView]()
+    private var layoutView: UIView!
+    private var constraintsUpdated = false
+    private var subviews = [UIView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        layoutView.backgroundColor = UIColor.lightGrayColor()
+        layoutView = layoutProvider.createLayoutView()
         containerView.addSubview(layoutView)
     }
 
@@ -30,7 +31,7 @@ class LayoutViewController: UIViewController {
     }
     
     @IBAction func addSuview() {
-        let v = UILabel.createWithText("V \(subviews.count + 1)")
+        let v = UILabel.createWithText(text: "V \(subviews.count + 1)")
         subviews.append(v)
         layoutView.addSubview(v)
     }
@@ -45,25 +46,72 @@ class LayoutViewController: UIViewController {
     override func updateViewConstraints() {
         if !constraintsUpdated {
             let layout = Layout(rootView: containerView, viewMap: ["container": containerView, "layout": layoutView])
+            layoutProvider.addConstraints(layout: layout)
             
-            //layout.fillSuperview(layoutView, respectMargin: false)
-            
-            //Just to show usage of visual format.
-            layout.createWithVisualFormat("V:|[layout]|")
-            layout.createWithVisualFormat("H:|[layout]|")
             layout.installConstraints()
             constraintsUpdated = true
         }
         super.updateViewConstraints()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func createLayoutView() -> UIView {
+        fatalError()
     }
-    */
-
+    
+    func addConstraints(layout: Layout) {}
+    
 }
+
+protocol LayoutProvider {
+    
+    func createLayoutView() -> UIView
+    
+    func addConstraints(layout: Layout)
+}
+
+class HorizontalLayoutProvider: LayoutProvider {
+    
+    func createLayoutView() -> UIView {
+        return HorizontalLinearLayoutView.instanceWithAutoLayout()
+    }
+    
+    func addConstraints(layout: Layout) {
+        layout.createWithVisualFormat("V:|[layout]|")
+    }
+}
+
+class VerticalLayoutProvider: LayoutProvider {
+    
+    func createLayoutView() -> UIView {
+        return VerticalLinearLayoutView.instanceWithAutoLayout()
+    }
+    
+    func addConstraints(layout: Layout) {
+        layout.createWithVisualFormat("H:|[layout]|")
+    }
+}
+
+class AutoScrollHorizontalLayoutProvider: LayoutProvider {
+    
+    func createLayoutView() -> UIView {
+        return AutoAdjustContentSizeHorizontalScrollView.instanceWithAutoLayout()
+    }
+    
+    func addConstraints(layout: Layout) {
+        layout.createWithVisualFormat("H:|[layout]|")
+        layout.createWithVisualFormat("V:|[layout]|")
+    }
+}
+
+class AutoScrollVerticalLayoutProvider: LayoutProvider {
+    
+    func createLayoutView() -> UIView {
+        return AutoAdjustContentSizeVerticalScrollView.instanceWithAutoLayout()
+    }
+    
+    func addConstraints(layout: Layout) {
+        layout.createWithVisualFormat("H:|[layout]|")
+        layout.createWithVisualFormat("V:|[layout]|")
+    }
+}
+

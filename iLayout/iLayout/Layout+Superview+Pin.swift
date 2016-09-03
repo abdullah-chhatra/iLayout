@@ -22,10 +22,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToTopEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToTopEdgeOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Top,
-                            toEdge: .Top,
+                            edge: .top,
+                            toEdge: .top,
                             constant: offset))
         return constraints.last!
     }
@@ -42,10 +43,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToTopMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToTopMarginOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Top,
-                            toEdge: .TopMargin,
+                            edge: .top,
+                            toEdge: .topMargin,
                             constant: offset))
         return constraints.last!
     }
@@ -62,10 +64,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToBottomEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToBottomEdgeOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Bottom,
-                            toEdge: .Bottom,
+                            edge: .bottom,
+                            toEdge: .bottom,
                             constant: -offset))
         return constraints.last!
     }
@@ -82,10 +85,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToBottomMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToBottomMarginOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Bottom,
-                            toEdge: .BottomMargin,
+                            edge: .bottom,
+                            toEdge: .bottomMargin,
                             constant: -offset))
         return constraints.last!
     }
@@ -102,10 +106,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToLeadingEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToLeadingEdgeOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Leading,
-                            toEdge: .Leading,
+                            edge: .leading,
+                            toEdge: .leading,
                             constant: offset))
         return constraints.last!
     }
@@ -122,10 +127,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToLeadingMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToLeadingMarginOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Leading,
-                            toEdge: .LeadingMargin,
+                            edge: .leading,
+                            toEdge: .leadingMargin,
                             constant: offset))
         return constraints.last!
     }
@@ -142,10 +148,11 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToTrailingEdgeOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToTrailingEdgeOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Trailing,
-                            toEdge: .Trailing,
+                            edge: .trailing,
+                            toEdge: .trailing,
                             constant: -offset))
         return constraints.last!
     }
@@ -162,18 +169,19 @@ public extension Layout {
         :returns:
                 Returns created constriant.
     */
-    public func pinToTrailingMarginOfSuperview(view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func pinToTrailingMarginOfSuperview(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         constraints.append(pinView(view,
-                            edge: .Trailing,
-                            toEdge: .TrailingMargin,
+                            edge: .trailing,
+                            toEdge: .trailingMargin,
                             constant: -offset))
         return constraints.last!
     }
     
-    private func pinView(view: UIView, edge: NSLayoutAttribute, toEdge: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+    private func pinView(_ view: UIView, edge: NSLayoutAttribute, toEdge: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: view,
                                     attribute: edge,
-                                    relatedBy: .Equal,
+                                    relatedBy: .equal,
                                     toItem: view.superview,
                                     attribute: toEdge,
                                     multiplier: 1,

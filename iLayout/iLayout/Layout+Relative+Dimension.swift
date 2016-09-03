@@ -28,11 +28,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-    public func makeWidthOfView(view: UIView, equalTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeWidthOfView(_ view: UIView, equalTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view,
             toView: equalTo,
-            attribute: .Width, 
-            relatedBy: .Equal,
+            attribute: .width, 
+            relatedBy: .equal,
             constant: offset)
     }
     
@@ -51,11 +52,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-    public func makeHeightOfView(view: UIView, equalTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeHeightOfView(_ view: UIView, equalTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view,
             toView: equalTo,
-            attribute: .Height, 
-            relatedBy: .Equal,
+            attribute: .height, 
+            relatedBy: .equal,
             constant: offset)
     }
     
@@ -77,7 +79,8 @@ public extension Layout {
         :returns:
                 Returns the two created constraints to set height and width.
     */
-    public func makeSizeOfView(view: UIView, equalTo: UIView, offsetWidth: CGFloat = 0, offsetHeight: CGFloat = 0) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func makeSizeOfView(_ view: UIView, equalTo: UIView, offsetWidth: CGFloat = 0, offsetHeight: CGFloat = 0) -> [NSLayoutConstraint] {
         return
             [makeHeightOfView(view, equalTo: equalTo, offset: offsetHeight),
             makeWidthOfView(view, equalTo: equalTo, offset: offsetWidth)]
@@ -98,11 +101,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-    public func makeWidthOfView(view: UIView, greaterOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeWidthOfView(_ view: UIView, greaterOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view, 
             toView: greaterOrEqualTo,
-            attribute: .Width, 
-            relatedBy: .GreaterThanOrEqual, 
+            attribute: .width, 
+            relatedBy: .greaterThanOrEqual, 
             constant: offset)
     }
     
@@ -121,11 +125,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-    public func makeHeightOfView(view: UIView, greaterOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeHeightOfView(_ view: UIView, greaterOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view,
             toView: greaterOrEqualTo, 
-            attribute: .Height, 
-            relatedBy: .GreaterThanOrEqual, 
+            attribute: .height, 
+            relatedBy: .greaterThanOrEqual, 
             constant: offset)
     }
     
@@ -144,12 +149,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-
-    public func makeWidthOfView(view: UIView, lessOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeWidthOfView(_ view: UIView, lessOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view,
             toView: lessOrEqualTo,
-            attribute: .Width, 
-            relatedBy: .LessThanOrEqual,
+            attribute: .width, 
+            relatedBy: .lessThanOrEqual,
             constant: offset)
     }
     
@@ -168,11 +173,12 @@ public extension Layout {
         :returns:
                 Returns the created constraint.
     */
-    public func makeHeightOfView(view: UIView, lessOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeHeightOfView(_ view: UIView, lessOrEqualTo: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         return makeView(view,
             toView: lessOrEqualTo,
-            attribute: .Height,
-            relatedBy: .LessThanOrEqual,
+            attribute: .height,
+            relatedBy: .lessThanOrEqual,
             constant: offset)
     }
 
@@ -191,10 +197,11 @@ public extension Layout {
         :returns:
                 Returns created contraint.
     */
-    public func makeWidthOfView(view: UIView, relativeTo: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeWidthOfView(_ view: UIView, relativeTo: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         return makeAttributeOfView(view,
             relativeTo: relativeTo,
-            attribute: NSLayoutAttribute.Width,
+            attribute: NSLayoutAttribute.width,
             multiplier: multiplier);
     }
     
@@ -213,19 +220,20 @@ public extension Layout {
         :returns:
             Returns created contraint.
     */
-    public func makeHeightOfView(view: UIView, relativeTo: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func makeHeightOfView(_ view: UIView, relativeTo: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         return makeAttributeOfView(view,
             relativeTo: relativeTo,
-            attribute: NSLayoutAttribute.Height,
+            attribute: NSLayoutAttribute.height,
             multiplier: multiplier);
     }
     
     
-    private func makeAttributeOfView(view: UIView, relativeTo: UIView, attribute: NSLayoutAttribute, multiplier: CGFloat) -> NSLayoutConstraint {
+    private func makeAttributeOfView(_ view: UIView, relativeTo: UIView, attribute: NSLayoutAttribute, multiplier: CGFloat) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
             attribute: attribute,
-            relatedBy: .Equal,
+            relatedBy: .equal,
             toItem: relativeTo,
             attribute: attribute,
             multiplier: multiplier,
@@ -234,7 +242,7 @@ public extension Layout {
         return constraints.last!
     }
 
-    private func makeView(view: UIView, toView: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation, constant: CGFloat) -> NSLayoutConstraint {
+    private func makeView(_ view: UIView, toView: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation, constant: CGFloat) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
                             attribute: attribute,

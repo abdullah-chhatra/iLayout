@@ -24,7 +24,7 @@ public class Layout {
     weak var rootView: UIView!
     
     var constraints = [NSLayoutConstraint]()
-    var viewMap: [NSObject: AnyObject]?
+    var viewMap: [String: AnyObject]?
     
     /**
         Designated initializer to create new instance.
@@ -59,10 +59,11 @@ public class Layout {
         :returns:
                 Craeted constraints.
     */
-    public func createWithVisualFormat(format: String) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func createWithVisualFormat(_ format: String) -> [NSLayoutConstraint] {
         var vc = [NSLayoutConstraint]()
         if let vm = viewMap {
-            vc = NSLayoutConstraint.constraintsWithVisualFormat(format, options: .allZeros, metrics: nil, views: vm) as! [NSLayoutConstraint]
+            vc = NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: vm) as! [NSLayoutConstraint]
         }
         
         constraints += vc
@@ -88,14 +89,14 @@ public class Layout {
         Activates all the constraints.
     */
     public func activateConstraints() {
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
     }
 
     /**
         Deactivates all the constraints.
     */
     public func deactivateConstraints() {
-        NSLayoutConstraint.deactivateConstraints(constraints)
+        NSLayoutConstraint.deactivate(constraints)
     }
     
     /**
@@ -103,7 +104,7 @@ public class Layout {
     */
     public func clearConstraints() {
         uninstallConstraints()
-        constraints.removeAll(keepCapacity: false)
+        constraints.removeAll(keepingCapacity: false)
     }
 }
 

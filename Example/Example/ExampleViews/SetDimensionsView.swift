@@ -7,21 +7,22 @@
 //
 
 import Foundation
+import UIKit
 import iLayout
 
 extension UILabel {
     
     class func create() -> UILabel {
-        var v = instanceWithAutoLayout()
-        v.layer.borderColor = UIColor.blackColor().CGColor
+        let v = instanceWithAutoLayout()
+        v.layer.borderColor = UIColor.black.cgColor
         v.layer.borderWidth = 0.5
-        v.textAlignment = .Center
-        v.font = v.font.fontWithSize(11)
+        v.textAlignment = .center
+        v.font = v.font.withSize(11)
         return v
     }
     
     class func createWithText(text: String) -> UILabel {
-        var v = create()
+        let v = create()
         v.text = text
         return v
     }
@@ -29,21 +30,21 @@ extension UILabel {
 
 class SetDimensionsView : AutoLayoutView {
     
-    var setWidth = UILabel.createWithText("Width equal to 250px")
-    var setHeight = UILabel.createWithText("Height equal to 50px")
-    var setSize1 = UILabel.createWithText("Size equal to 200px X 50px")
-    var setSize2 = UILabel.createWithText("Size equal to 150px X 70px")
+    var setWidth = UILabel.createWithText(text: "Width equal to 250px")
+    var setHeight = UILabel.createWithText(text: "Height equal to 50px")
+    var setSize1 = UILabel.createWithText(text: "Size equal to 200px X 50px")
+    var setSize2 = UILabel.createWithText(text: "Size equal to 150px X 70px")
 
-    var setWidthLE = UILabel.createWithText("Width less or equal to 150px")
-    var setWidthGE = UILabel.createWithText("Width greater or equal to 150px (as this label expands)")
-    var setHeightLE = UILabel.createWithText("Height less or equal to 50px")
-    var setHeightGE = UILabel.createWithText("Height greater or equal to 50px")
+    var setWidthLE = UILabel.createWithText(text: "Width less or equal to 150px")
+    var setWidthGE = UILabel.createWithText(text: "Width greater or equal to 150px (as this label expands)")
+    var setHeightLE = UILabel.createWithText(text: "Height less or equal to 50px")
+    var setHeightGE = UILabel.createWithText(text: "Height greater or equal to 50px")
 
     
     override func initializeView() {
         super.initializeView()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
         addSubview(setWidth)
         addSubview(setHeight)
@@ -55,7 +56,7 @@ class SetDimensionsView : AutoLayoutView {
         addSubview(setWidthGE)
     }
     
-    override func addConstraints(layout: Layout) {
+    override func addConstraints(_ layout: Layout) {
         layout.pinToTopMarginOfSuperview(setWidth, offset: 20)
         layout.horizontallyAlignView(setWidth, withView: self)
         layout.setForView(setWidth, width: 250)
@@ -66,7 +67,7 @@ class SetDimensionsView : AutoLayoutView {
         
         layout.placeView(setSize1, below: setHeight, spacing: 5)
         layout.horizontallyAlignView(setSize1, withView: self)
-        layout.setForView(setSize1, size: CGSizeMake(200, 50))
+        layout.setForView(setSize1, size: CGSize(width: 200, height: 50))
         
         layout.placeView(setSize2, below: setSize1, spacing: 5)
         layout.horizontallyAlignView(setSize2, withView: self)

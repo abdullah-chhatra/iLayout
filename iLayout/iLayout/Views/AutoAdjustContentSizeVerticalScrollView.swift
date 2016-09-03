@@ -32,7 +32,7 @@ public class AutoAdjustContentSizeVerticalScrollView: AutoAdjustContentSizeScrol
         scrollView.addSubview(contentView)
     }
     
-    public override func addConstraints(layout: Layout) {
+    public override func addConstraints(_ layout: Layout) {
         layout.fillSuperview(scrollView, respectMargin: false)
         layout.fillSuperview(contentView, respectMargin: false)
         layout.makeWidthOfView(contentView, equalTo: self)

@@ -76,7 +76,7 @@ public class AutoLayoutView : BaseAutoLayoutView {
         :param: layout
                 Layout object to add constraints.
     */
-    public func addConstraints(layout: Layout) {
+    public func addConstraints(_ layout: Layout) {
         fatalError("This method must be implemented by subclass")
     }
 }

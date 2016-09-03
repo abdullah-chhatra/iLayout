@@ -28,13 +28,14 @@ public extension Layout {
         :returns:
                 Returns created constraint.
      */
-    public func placeView(view: UIView, below: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func placeView(_ view: UIView, below: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
 
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Top,
-                            relatedBy: .Equal,
+                            attribute: .top,
+                            relatedBy: .equal,
                             toItem: below,
-                            attribute: .Bottom,
+                            attribute: .bottom,
                             multiplier: 1,
                             constant: spacing))
         return constraints.last!
@@ -55,13 +56,14 @@ public extension Layout {
         :returns:
                 Returns created constraint.
     */
-    public func placeView(view: UIView, above: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func placeView(_ view: UIView, above: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Bottom,
-                            relatedBy: .Equal,
+                            attribute: .bottom,
+                            relatedBy: .equal,
                             toItem: above,
-                            attribute: .Top,
+                            attribute: .top,
                             multiplier: 1,
                             constant: -spacing))
         return constraints.last!
@@ -82,13 +84,14 @@ public extension Layout {
         :returns:
                 Returns created constraint.
     */
-    public func placeView(view: UIView, leftOf: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func placeView(_ view: UIView, leftOf: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Right,
-                            relatedBy: .Equal,
+                            attribute: .right,
+                            relatedBy: .equal,
                             toItem: leftOf,
-                            attribute: .Left,
+                            attribute: .left,
                             multiplier: 1,
                             constant: -spacing))
         return constraints.last!
@@ -109,13 +112,14 @@ public extension Layout {
         :returns:
                 Returns created constraint.
     */
-    public func placeView(view: UIView, rightOf: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult
+    public func placeView(_ view: UIView, rightOf: UIView, spacing: CGFloat = 0) -> NSLayoutConstraint {
         
         constraints.append(NSLayoutConstraint(item: view,
-                            attribute: .Left,
-                            relatedBy: .Equal,
+                            attribute: .left,
+                            relatedBy: .equal,
                             toItem: rightOf,
-                            attribute: .Right,
+                            attribute: .right,
                             multiplier: 1,
                             constant: spacing))
         return constraints.last!

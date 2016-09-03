@@ -23,7 +23,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillWidthOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillWidthOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         return respectMargin ?
             [pinToLeadingMarginOfSuperview(view), pinToTrailingMarginOfSuperview(view)] :
             [pinToLeadingEdgeOfSuperview(view), pinToTrailingEdgeOfSuperview(view)]
@@ -42,8 +43,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-
-    public func fillHeightOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillHeightOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         
         return respectMargin ?
             [pinToTopMarginOfSuperview(view), pinToBottomMarginOfSuperview(view)] :
@@ -63,7 +64,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillTopOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillTopOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         if respectMargin {
             return [pinToLeadingMarginOfSuperview(view),
                 pinToTopMarginOfSuperview(view),
@@ -88,7 +90,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillBottomOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillBottomOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         if respectMargin {
             return [pinToLeadingMarginOfSuperview(view),
                 pinToBottomMarginOfSuperview(view),
@@ -113,7 +116,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillLeadingSideOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillLeadingSideOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         if respectMargin {
             return [pinToTopMarginOfSuperview(view),
                 pinToLeadingMarginOfSuperview(view),
@@ -138,7 +142,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillTrailingSideOfSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillTrailingSideOfSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         if respectMargin {
             return [pinToTopMarginOfSuperview(view),
                 pinToTrailingMarginOfSuperview(view),
@@ -162,7 +167,8 @@ public extension Layout {
     
         :returns:   Returns the newly created constraints as an array.
     */
-    public func fillSuperview(view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func fillSuperview(_ view: UIView, respectMargin: Bool = true) -> [NSLayoutConstraint] {
         if respectMargin {
             return [pinToTopMarginOfSuperview(view),
                     pinToBottomMarginOfSuperview(view),

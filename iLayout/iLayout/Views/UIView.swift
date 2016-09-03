@@ -18,8 +18,8 @@ public extension UIView {
         Creates any subclass of UIView with no argument initializer and sets autoresizing mask to constraints to false.
     */
     public class func instanceWithAutoLayout() -> Self {
-        var view = self()
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let view = self.init()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
@@ -38,11 +38,11 @@ public extension UIView {
         :param: duration
                 Duration of animation.
     */
-    public func updateLayoutWithAnimation(duration: NSTimeInterval) {
+    public func updateLayoutWithAnimation(_ duration: TimeInterval) {
         setNeedsUpdateConstraints()
         updateConstraintsIfNeeded()
         
-        UIView.animateWithDuration(duration, animations: { () -> Void in
+        UIView.animate(withDuration: duration, animations: { () -> Void in
             self.layoutIfNeeded()
         })
     }

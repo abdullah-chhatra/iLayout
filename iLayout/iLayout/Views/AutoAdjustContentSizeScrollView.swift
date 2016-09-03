@@ -24,23 +24,23 @@ public class AutoAdjustContentSizeScrollView : AutoLayoutView {
         super.addSubview(scrollView)
     }
     
-    public override func addSubview(view: UIView) {
+    public override func addSubview(_ view: UIView) {
         contentView.addSubview(view)
         didAddSubview(view)
     }
     
-    public override func insertSubview(view: UIView, aboveSubview siblingSubview: UIView) {
+    public override func insertSubview(_ view: UIView, aboveSubview siblingSubview: UIView) {
         contentView.insertSubview(view, aboveSubview: siblingSubview)
         didAddSubview(view)
     }
     
-    public override func insertSubview(view: UIView, belowSubview siblingSubview: UIView) {
+    public override func insertSubview(_ view: UIView, belowSubview siblingSubview: UIView) {
         contentView.insertSubview(view, belowSubview: siblingSubview)
         didAddSubview(view)
     }
     
-    public override func insertSubview(view: UIView, atIndex index: Int) {
-        contentView.insertSubview(view, atIndex: index)
+    public override func insertSubview(_ view: UIView, at index: Int) {
+        contentView.insertSubview(view, at: index)
         didAddSubview(view)
     }
 }

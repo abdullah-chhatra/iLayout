@@ -25,7 +25,8 @@ public extension Layout {
         :returns:
                 Returns two constraints to set height and width.
     */
-    public func setForView(view: UIView, size: CGSize) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func setForView(_ view: UIView, size: CGSize) -> [NSLayoutConstraint] {
         return [setForView(view, height: size.height),
                 setForView(view, width: size.width)]
     }
@@ -45,7 +46,8 @@ public extension Layout {
         :returns:
                 Returns two constraints to set height and width.
     */
-    public func setForView(view: UIView, width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
+    @discardableResult
+    public func setForView(_ view: UIView, width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
         return [setForView(view, width: width),
                 setForView(view, height: height)]
     }
@@ -62,10 +64,11 @@ public extension Layout {
         :returns:
                 Returns constraints to set height.
     */
-    public func setForView(view: UIView, height: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, height: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Height,
-                            relatedBy: .Equal,
+                            attribute: .height,
+                            relatedBy: .equal,
                             constant: height))
         return constraints.last!
     }
@@ -82,11 +85,11 @@ public extension Layout {
         :returns:
                 Returns constraints to set width.
     */
-
-    public func setForView(view: UIView, width: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, width: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Width,
-                            relatedBy: .Equal,
+                            attribute: .width,
+                            relatedBy: .equal,
                             constant: width))
         return constraints.last!
     }
@@ -103,10 +106,11 @@ public extension Layout {
         :returns:
             Returns constraints to set height less than or equal to given value.
     */
-    public func setForView(view: UIView, heightLessOrEqual: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, heightLessOrEqual: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Height,
-                            relatedBy: .LessThanOrEqual,
+                            attribute: .height,
+                            relatedBy: .lessThanOrEqual,
                             constant: heightLessOrEqual))
         return constraints.last!
     }
@@ -123,10 +127,11 @@ public extension Layout {
         :returns:
                 Returns constraints to set height greater than or equal to given value.
     */
-    public func setForView(view: UIView, heightGreaterOrEqual: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, heightGreaterOrEqual: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Height,
-                            relatedBy: .GreaterThanOrEqual,
+                            attribute: .height,
+                            relatedBy: .greaterThanOrEqual,
                             constant: heightGreaterOrEqual))
         return constraints.last!
     }
@@ -143,10 +148,11 @@ public extension Layout {
         :returns:
                 Returns constraints to set width less than or equal to given value.
     */
-    public func setForView(view: UIView, widthLessOrEqual: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, widthLessOrEqual: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Width,
-                            relatedBy: .LessThanOrEqual,
+                            attribute: .width,
+                            relatedBy: .lessThanOrEqual,
                             constant: widthLessOrEqual))
         return constraints.last!
     }
@@ -163,20 +169,21 @@ public extension Layout {
         :returns:
                 Returns constraints to set width greater than or equal to given value.
     */
-    public func setForView(view: UIView, widthGreaterOrEqual: CGFloat) -> NSLayoutConstraint {
+    @discardableResult
+    public func setForView(_ view: UIView, widthGreaterOrEqual: CGFloat) -> NSLayoutConstraint {
         constraints.append(setForView(view,
-                            attribute: .Width,
-                            relatedBy: .GreaterThanOrEqual,
+                            attribute: .width,
+                            relatedBy: .greaterThanOrEqual,
                             constant: widthGreaterOrEqual))
         return constraints.last!
     }
 
-    private func setForView(view: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation, constant: CGFloat) -> NSLayoutConstraint {
+    private func setForView(_ view: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation, constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: view,
                             attribute: attribute,
                             relatedBy: relatedBy,
                             toItem: nil,
-                            attribute: .NotAnAttribute,
+                            attribute: .notAnAttribute,
                             multiplier: 1,
                             constant: constant)
     }

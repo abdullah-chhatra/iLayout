@@ -11,17 +11,17 @@ import iLayout
 
 class PlacementView : AutoLayoutView {
     
-    var centerView = UILabel.createWithText("Cener view")
+    var centerView = UILabel.createWithText(text: "Cener view")
     
-    var topView = UILabel.createWithText("Top view")
-    var bottomView  = UILabel.createWithText("Bottom view")
-    var leftView = UILabel.createWithText("Left view")
-    var rightView  = UILabel.createWithText("Right view")
+    var topView = UILabel.createWithText(text: "Top view")
+    var bottomView  = UILabel.createWithText(text: "Bottom view")
+    var leftView = UILabel.createWithText(text: "Left view")
+    var rightView  = UILabel.createWithText(text: "Right view")
     
     override func initializeView() {
         super.initializeView()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
         addSubview(centerView)
         addSubview(topView)
@@ -30,7 +30,7 @@ class PlacementView : AutoLayoutView {
         addSubview(rightView)
     }
     
-    override func addConstraints(layout: Layout) {
+    override func addConstraints(_ layout: Layout) {
         layout.alignCenterWithSuperview(centerView)
         layout.setForView(centerView, width: 150, height: 150)
         

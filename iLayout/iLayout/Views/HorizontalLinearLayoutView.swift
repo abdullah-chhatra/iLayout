@@ -25,16 +25,16 @@ import UIKit
 
 public class HorizontalLinearLayoutView : LinearLayoutView {
     
-    public override func placeFirstView(view: UIView) {
+    public override func placeFirstView(_ view: UIView) {
         layout.fillLeadingSideOfSuperview(view, respectMargin: respectsMargin)
     }
     
-    public override func placeView(view: UIView, afterView: UIView) {
+    public override func placeView(_ view: UIView, afterView: UIView) {
         layout.placeView(view, rightOf: afterView, spacing: interviewSpacing)
         layout.fillHeightOfSuperview(view, respectMargin: respectsMargin)
     }
     
-    public override func placeLastView(view: UIView) {
+    public override func placeLastView(_ view: UIView) {
         layout.fillTrailingSideOfSuperview(view, respectMargin: respectsMargin)
     }
 }
